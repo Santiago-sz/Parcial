@@ -69,6 +69,22 @@ public class Parcial1Tests {
 
     }
 
+
+
+    @Test
+    public void torneo_agregar_partidos_parcial_ejercicio_ejemplo_011()
+    {
+        Equipo internacional = new Equipo("Internacional", "INT");        
+        Equipo fluminense = new Equipo("Fluminense", "FLU");
+
+            
+        Partido partido1Ida = new Partido(internacional, fluminense, "Semifinal Partido Ida");
+
+        partido1Ida.verificarPalabraClave(partido1Ida);
+
+        assertEquals("Ida", partido1Ida.verificarPalabraClave(partido1Ida));  
+    }
+
     
     @Test
     public void torneo_agregar_jugadores_a_un_equipo_parcial_ejercicio_ejemplo_03()
