@@ -6,6 +6,7 @@ import java.util.List;
 public class Torneo {
     String nombre;
     List<Equipo> equipos = new ArrayList<>();
+    List<Partido> partidos = new ArrayList<>();
     String ganador;
 
     public Torneo(String nombre, List<Equipo> equipos) {
@@ -15,11 +16,19 @@ public class Torneo {
 
     public Torneo(String nombre) {
         List<Equipo> equipos = new ArrayList<>();
+        List<Partido> partidos = new ArrayList<>();
         this.nombre = nombre;
     } 
 
-    public void agregar(Equipo equipo){
-    equipos.add(equipo);
+    public void agregar(Object objeto) {
+        if (objeto instanceof Equipo) {
+            equipos.add((Equipo) objeto);
+        } else if (objeto instanceof Partido) {
+            partidos.add((Partido) objeto);
+        }
+    }
+     public int partidosCantidad(){
+        return partidos.size();
     }
 
     public int equiposCantidad(){

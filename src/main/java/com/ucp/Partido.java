@@ -4,16 +4,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Partido {
-    String local;
-    String visitante;
+    Equipo local;
+    Equipo visitante;
     String fecha;
     List<Tarjeta> equipos = new ArrayList<>();
+
+
+    public Partido(){
+        
+    }
     
-    public Partido(String local, String visitante, String fecha, List<Tarjeta> equipos) {
+    public Partido(Equipo local,Equipo visitante, String fecha, List<Tarjeta> equipos) {
         this.local = local;
         this.visitante = visitante;
         this.fecha = fecha;
         this.equipos = equipos;
     }
+     public Partido(Equipo local, Equipo visitante, String fecha) {
+        this.local = local;
+        this.visitante = visitante;
+        this.fecha = fecha;
+    }
 
+    public boolean verificarPalabraClave(Partido partido) {
+        String nombrePartido = partido.getClass().getSimpleName();
+        return nombrePartido.toLowerCase().contains("ida");
+    }
+
+    public String getName() {
+        Partido partido = new Partido();
+        partido.verificarPalabraClave(partido);
+        if(partido.verificarPalabraClave(partido) == true){String total = fecha +"ida"+ local.getSiglas() + "x" + visitante.getSiglas();
+        return total;}
+        if(partido.verificarPalabraClave(partido) == true){String total = fecha + "vuelta"+local.getSiglas() + "x" + visitante.getSiglas();
+        return total;}
+           }
 }

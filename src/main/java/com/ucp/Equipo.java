@@ -30,5 +30,8 @@ public class Equipo {
         return equipos;
     }
 
+    public String getSiglas() {
+        return siglas;
+    }
 
 }
