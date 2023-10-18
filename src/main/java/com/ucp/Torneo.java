@@ -35,4 +35,7 @@ public class Torneo {
         return equipos.size();
     }
 
+    public List<Partido> getPartidos() {
+        return partidos;
+    }
 }

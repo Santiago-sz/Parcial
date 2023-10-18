@@ -26,17 +26,17 @@ public class Partido {
         this.fecha = fecha;
     }
 
+    
     public boolean verificarPalabraClave(Partido partido) {
         String nombrePartido = partido.getClass().getSimpleName();
         return nombrePartido.toLowerCase().contains("ida");
     }
-
+    
     public String getName() {
-        Partido partido = new Partido();
-        partido.verificarPalabraClave(partido);
-        if(partido.verificarPalabraClave(partido) == true){String total = fecha +"ida"+ local.getSiglas() + "x" + visitante.getSiglas();
-        return total;}
-        if(partido.verificarPalabraClave(partido) == true){String total = fecha + "vuelta"+local.getSiglas() + "x" + visitante.getSiglas();
-        return total;}
-           }
+        String total = fecha + (verificarPalabraClave(this) ? "ida" : "vuelta") +
+                       local.getSiglas() + "x" + visitante.getSiglas();
+        return total;
+    }
+    
+    
 }

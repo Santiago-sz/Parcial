@@ -7,7 +7,7 @@ public class Equipo {
 
     String nombre ="";
     String siglas="";
-    List<Jugador> equipos = new ArrayList<>();
+    List<Jugador> equipo = new ArrayList<>();
 
     public Equipo(String nombre,String siglas){
         this.nombre = nombre;
@@ -27,11 +27,20 @@ public class Equipo {
     }
     
     public List<Jugador> getEquipos() {
-        return equipos;
+        return equipo;
     }
 
     public String getSiglas() {
         return siglas;
     }
+    
+    public void agregar(Jugador jugador) {
+        jugador.add(equipo);
+    }
+
+    public int jugadoresCantidad(){
+        return equipo.size();
+    }
+
 
 }
