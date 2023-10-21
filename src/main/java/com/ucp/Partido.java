@@ -25,24 +25,22 @@ public class Partido {
         this.visitante = visitante;
         this.fecha = fecha;
     }
-
-    
-    public String verificarPalabraClave(Partido partido) {
-        String nombrePartido = partido.getClass().getSimpleName(); 
-        if (nombrePartido.contains("Ida")) {
-            return "Ida";
-        } else if (nombrePartido.contains("Vuelta")) {
-            return "Vuelta";
-        } else {
-            return "desconocido";
-        }
-    }
     
 
     public String getName() {
-        String tipoPartido = verificarPalabraClave(this).equals("Ida") ? "Ida" : "Vuelta";
-        return String.format("Semifinal Partido %s %sx%s", tipoPartido, local.getSiglas(), visitante.getSiglas());
+        return getFecha() + " " + local.getSiglas() +"x"+ visitante.getSiglas();
+    }
+    public String getFecha(){
+        return fecha;
     }
     
-    
+    public String verificarPalabraClave(Partido partido) {
+        if (partido.getFecha().contains("Ida")) {
+            return "Ida";
+        } else if (partido.getFecha().contains("Vuelta")) {
+            return "Vuelta";
+        } else {
+            return "Ninguna palabra clave encontrada";
+        }
+    }
 }
