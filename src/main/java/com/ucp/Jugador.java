@@ -19,7 +19,15 @@ public class Jugador {
         this.nombre = nombre;
     }
 
+    public int getNumero() {
+        return numero;
+    } 
+    public String getName(){
+        return nombre;
+    }
+
     public void add(List<Jugador> equipo) {
+
     }
 
 }

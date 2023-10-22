@@ -97,11 +97,10 @@ public class Parcial1Tests {
         boca.agregar(jugador10);         
         boca.agregar(jugador19); 
 
-        assertEquals(2, boca.jugadoresCantidad());          
+        assertEquals(2, boca.jugadoresCantidad());        
         
         assertEquals("Edinson Cavani", boca.obtenerJugador(10).getName());          
         assertEquals("Valentin Barco", boca.obtenerJugador(19).getName());  
-
     }
 
 

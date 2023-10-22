@@ -36,6 +36,7 @@ public class Torneo {
     }
 
     public List<Partido> getPartidos() {
+        
         return partidos;
     }
 }

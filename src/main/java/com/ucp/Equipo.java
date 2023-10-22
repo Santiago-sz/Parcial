@@ -35,11 +35,22 @@ public class Equipo {
     }
     
     public void agregar(Jugador jugador) {
-        jugador.add(equipo);
+        equipo.add(jugador);
     }
 
     public int jugadoresCantidad(){
         return equipo.size();
+    }
+
+    public Jugador obtenerJugador(int numero) {
+        for (int i = 0; i < equipo.size(); i++) {
+            Jugador jugador = equipo.get(i);
+            if (numero == jugador.getNumero()) {
+                return jugador;
+            }
+        }
+        // Si no se encuentra ningún jugador con el número proporcionado, puedes devolver null o lanzar una excepción según tus necesidades.
+        return null;
     }
 
 
