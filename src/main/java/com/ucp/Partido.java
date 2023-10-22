@@ -7,23 +7,30 @@ public class Partido {
     Equipo local;
     Equipo visitante;
     String fecha;
-    List<Tarjeta> equipos = new ArrayList<>();
-
+    List<TarjetaBase> equipos = new ArrayList<>();
+    Estadio estadio;
 
     public Partido(){
         
     }
     
-    public Partido(Equipo local,Equipo visitante, String fecha, List<Tarjeta> equipos) {
+    public Partido(Equipo local,Equipo visitante, String fecha, List<TarjetaBase> equipos) {
         this.local = local;
         this.visitante = visitante;
         this.fecha = fecha;
         this.equipos = equipos;
     }
+        
      public Partido(Equipo local, Equipo visitante, String fecha) {
         this.local = local;
         this.visitante = visitante;
         this.fecha = fecha;
+    }
+     public Partido(Estadio estadio, Equipo local, Equipo visitante, String fecha) {
+        this.local = local;
+        this.visitante = visitante;
+        this.fecha = fecha;
+        this.estadio = estadio;
     }
     
 
@@ -43,4 +50,25 @@ public class Partido {
             return "Ninguna palabra clave encontrada";
         }
     }
+
+    public int tarjetasCantidad(){
+        return equipos.size();
+    }
+
+    
+    public void agregar(TarjetaBase tarjeta) {
+        equipos.add(tarjeta);
+    }
+
+    
+    public List<TarjetaBase> getTarjetas(){
+        return equipos;
+    }
+    
+    public Estadio getEstadio() {
+        return estadio;
+    }
+
+    
+
 }
