@@ -37,9 +37,18 @@ public int cantidadTarjetasAmarillas() {
     return (int) cantidadTarjetasAmarillas;
 }
 
+
 public int cantidadTarjetas(Equipo equipo){
-    int cantidadDeTarjetas = cantidadTarjetasAmarillas() + cantidadTarjetasRojas();
-    return cantidadDeTarjetas;
+    List<TarjetaBase> tarjetas = equipo.getTarjetas();
+    long cantidadTarjetasAmarillas = tarjetas.stream()
+                                              .filter(tarjeta -> tarjeta instanceof TarjetaAmarilla)
+                                              .count();
+
+    long cantidadTarjetasRojas = tarjetas.stream()
+                                       .filter(tarjeta -> tarjeta instanceof TarjetaRoja)
+                                       .count();
+    int i = (int) (cantidadTarjetasAmarillas + cantidadTarjetasRojas);
+    return i;
 }
 
 /*public int cantidadTarjetasRojas() {
@@ -61,4 +70,10 @@ public int cantidadTarjetas(Equipo equipo){
     // Devolver el número total de tarjetas rojas encontradas
     return contadorTarjetasRojas;
 } */
+
+public void partido(){
+    
+
+}
+
 }

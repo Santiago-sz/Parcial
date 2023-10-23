@@ -10,6 +10,11 @@ public class Equipo {
     String siglas="";
     List<IJugador> equipo = new ArrayList<>();
     List<String> posiciones = new ArrayList<>();
+    List<TarjetaBase> tarjetas = new ArrayList<>();
+
+    public List<TarjetaBase> getTarjetas() {
+        return tarjetas;
+    }
 
     public Equipo(String nombre,String siglas){
         this.nombre = nombre;
