@@ -2,32 +2,36 @@ package com.ucp;
 
 import java.util.List;
 
-public class Jugador {
+public class Jugador implements IJugador {
     String nombre;
     int numero;
+    String posicion;
+    String value;
 
     public Jugador(String nombre,int numero){
         this.nombre = nombre;
         this.numero = numero;
-    }
-    
-    public String getNombre() {
-        return nombre;
-    }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+        posicion = "";
     }
 
     public int getNumero() {
         return numero;
     } 
+
     public String getName(){
         return nombre;
     }
 
     public void add(List<Jugador> equipo) {
 
+    }
+    public void setPosicion(String value){
+        this.posicion = value;
+
+    }
+
+    public String getPosicion() {
+        return posicion;
     }
 
 }

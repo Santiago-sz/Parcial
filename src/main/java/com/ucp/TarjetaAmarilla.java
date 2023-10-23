@@ -2,11 +2,11 @@ package com.ucp;
 
 public class TarjetaAmarilla extends TarjetaBase {
 
-    public TarjetaAmarilla(Jugador jugador) {
+    public TarjetaAmarilla(IJugador jugador) {
         super("AMARILLA", jugador);
     }
     
-    public TarjetaAmarilla(String color,Jugador jugador) {
+    public TarjetaAmarilla(String color,IJugador jugador) {
         super("AMARILLA", jugador);
     }
 
