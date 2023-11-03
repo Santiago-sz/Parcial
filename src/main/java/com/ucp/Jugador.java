@@ -25,6 +25,7 @@ public class Jugador implements IJugador {
     public void add(List<Jugador> equipo) {
 
     }
+    
     public void setPosicion(String value){
         this.posicion = value;
 

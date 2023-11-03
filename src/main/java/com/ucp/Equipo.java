@@ -16,6 +16,10 @@ public class Equipo {
         return tarjetas;
     }
 
+    public void setTarjetas(List<TarjetaBase> tarjetas) {
+        this.tarjetas = tarjetas;
+    }
+
     public Equipo(String nombre,String siglas){
         this.nombre = nombre;
         this.siglas = siglas;
@@ -37,12 +41,13 @@ public class Equipo {
         return equipo;
     }
 
+
     public String getSiglas() {
         return siglas;
     }
     
-    public void agregar(IJugador jugadorBoca6) {
-        equipo.add(jugadorBoca6);
+    public void agregar(IJugador jugador) {
+        equipo.add(jugador);
     }
 
     public int jugadoresCantidad(){

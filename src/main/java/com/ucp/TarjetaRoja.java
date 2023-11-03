@@ -17,4 +17,5 @@ public class TarjetaRoja extends TarjetaBase {
                     getColor(),
                     getJugador().getName());
     }
+
 }

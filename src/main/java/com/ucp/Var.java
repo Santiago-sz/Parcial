@@ -1,6 +1,9 @@
 package com.ucp;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Var {
 Partido partido;
@@ -38,19 +41,12 @@ public int cantidadTarjetasAmarillas() {
 }
 
 
-public int cantidadTarjetas(Equipo equipo){
-    List<TarjetaBase> tarjetas = equipo.getTarjetas();
-    long cantidadTarjetasAmarillas = tarjetas.stream()
-                                              .filter(tarjeta -> tarjeta instanceof TarjetaAmarilla)
-                                              .count();
-
-    long cantidadTarjetasRojas = tarjetas.stream()
-                                       .filter(tarjeta -> tarjeta instanceof TarjetaRoja)
-                                       .count();
-    int i = (int) (cantidadTarjetasAmarillas + cantidadTarjetasRojas);
-    return i;
-}
-
+  public int cantidadTarjetas(Equipo equipo){
+        List<TarjetaBase> listaTarjetas = new ArrayList<>();
+        Predicate<TarjetaBase> buscarTarjeta = tarjeta -> equipo.getEquipos().contains(tarjeta.getJugador());
+        listaTarjetas.addAll(partido.getTarjetas().stream().filter(buscarTarjeta).collect(Collectors.toList()));
+        return listaTarjetas.size();
+    }
 /*public int cantidadTarjetasRojas() {
     // Obtener la lista de tarjetas del partido
     List<TarjetaBase> tarjetas = partido.getTarjetas();
@@ -70,10 +66,5 @@ public int cantidadTarjetas(Equipo equipo){
     // Devolver el número total de tarjetas rojas encontradas
     return contadorTarjetasRojas;
 } */
-
-public void partido(){
-    
-
-}
 
 }
