@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Partido {
+    Arbitro arbitro , arbitro2;
+    Arbitro arbitrolinea1 , arbitrolinea2;
+    Arbitro Asistente;
     Equipo local;
     Equipo visitante;
     String fecha;

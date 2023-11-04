@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Equipo {
+public class Equipo implements IImprimible {
 
     String nombre ="";
     String siglas="";
@@ -83,6 +83,11 @@ public class Equipo {
 
         // Devolver la cadena del plantel
         return plantel.toString().substring(0, plantel.length() - 2);
+    }
+
+    @Override
+    public String impresion() {
+        return "[Equipo] " + getName() + " > " + getAbreviatura();
     }
 
 }

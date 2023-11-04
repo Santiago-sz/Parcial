@@ -2,7 +2,7 @@ package com.ucp;
 
 import java.util.List;
 
-public class Jugador implements IJugador {
+public class Jugador implements IJugador, IImprimible {
     String nombre;
     int numero;
     String posicion;
@@ -25,7 +25,7 @@ public class Jugador implements IJugador {
     public void add(List<Jugador> equipo) {
 
     }
-    
+
     public void setPosicion(String value){
         this.posicion = value;
 
@@ -33,6 +33,11 @@ public class Jugador implements IJugador {
 
     public String getPosicion() {
         return posicion;
+    }
+
+    @Override
+    public String impresion(){
+        return "[Jugador " + getNumero() + "] " + getName() + " > " + getPosicion();  
     }
 
 }

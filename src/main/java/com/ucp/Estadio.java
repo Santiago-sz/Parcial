@@ -1,6 +1,6 @@
 package com.ucp;
 
-public class Estadio {
+public class Estadio implements IImprimible{
     String name;
     String ciudad;
     String pais;
@@ -23,6 +23,11 @@ public class Estadio {
 
         public String toString(){
            return getName() +", "+ getCiudad()+" ("+getPais()+")";
+        }
+
+        @Override
+        public String impresion() {
+            return "[Estadio] " + getName() + " (" + getCiudad() + " - " + getPais() + ")";
         }
 
 

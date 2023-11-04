@@ -6,6 +6,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Var {
+AVAR nose1,nose2,nose3;
+AsistenteDeVideo Asis;
 Partido partido;
 TarjetaAmarilla tarjetaAmarilla;
 TarjetaRoja tarjetaRoja;   
@@ -47,24 +49,5 @@ public int cantidadTarjetasAmarillas() {
         listaTarjetas.addAll(partido.getTarjetas().stream().filter(buscarTarjeta).collect(Collectors.toList()));
         return listaTarjetas.size();
     }
-/*public int cantidadTarjetasRojas() {
-    // Obtener la lista de tarjetas del partido
-    List<TarjetaBase> tarjetas = partido.getTarjetas();
-    
-    // Inicializar un contador para las tarjetas rojas
-    int contadorTarjetasRojas = 0;
-    
-    // Recorrer la lista de tarjetas usando un bucle for-each
-    for (TarjetaBase tarjeta : tarjetas) {
-        // Verificar si la tarjeta es una instancia de TarjetaRoja
-        if (tarjeta instanceof TarjetaRoja) {
-            // Incrementar el contador si la tarjeta es roja
-            contadorTarjetasRojas++;
-        }
-    }
-    
-    // Devolver el número total de tarjetas rojas encontradas
-    return contadorTarjetasRojas;
-} */
 
 }
