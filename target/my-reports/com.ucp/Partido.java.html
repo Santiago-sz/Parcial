@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Partido.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Parcial</a> &gt; <a href="index.source.html" class="el_package">com.ucp</a> &gt; <span class="el_source">Partido.java</span></div><h1>Partido.java</h1><pre class="source lang-java linenums">package com.ucp;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Partido {
+    Arbitro arbitro , arbitro2;
+    Arbitro arbitrolinea1 , arbitrolinea2;
+    Arbitro Asistente;
+    Equipo local;
+    Equipo visitante;
+    String fecha;
+<span class="pc" id="L13">    List&lt;TarjetaBase&gt; equipos = new ArrayList&lt;&gt;();</span>
+    Estadio estadio;
+
+<span class="nc" id="L16">    public Partido(){</span>
+        
+<span class="nc" id="L18">    }</span>
+    
+<span class="nc" id="L20">    public Partido(Equipo local,Equipo visitante, String fecha, List&lt;TarjetaBase&gt; equipos) {</span>
+<span class="nc" id="L21">        this.local = local;</span>
+<span class="nc" id="L22">        this.visitante = visitante;</span>
+<span class="nc" id="L23">        this.fecha = fecha;</span>
+<span class="nc" id="L24">        this.equipos = equipos;</span>
+<span class="nc" id="L25">    }</span>
+        
+<span class="fc" id="L27">     public Partido(Equipo local, Equipo visitante, String fecha) {</span>
+<span class="fc" id="L28">        this.local = local;</span>
+<span class="fc" id="L29">        this.visitante = visitante;</span>
+<span class="fc" id="L30">        this.fecha = fecha;</span>
+<span class="fc" id="L31">    }</span>
+<span class="fc" id="L32">     public Partido(Estadio estadio, Equipo local, Equipo visitante, String fecha) {</span>
+<span class="fc" id="L33">        this.local = local;</span>
+<span class="fc" id="L34">        this.visitante = visitante;</span>
+<span class="fc" id="L35">        this.fecha = fecha;</span>
+<span class="fc" id="L36">        this.estadio = estadio;</span>
+<span class="fc" id="L37">    }</span>
+    
+
+    public String getName() {
+<span class="fc" id="L41">        return getFecha() + &quot; &quot; + local.getSiglas() +&quot;x&quot;+ visitante.getSiglas();</span>
+    }
+    public String getFecha(){
+<span class="fc" id="L44">        return fecha;</span>
+    }
+    
+    public String verificarPalabraClave(Partido partido) {
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        if (partido.getFecha().contains(&quot;Ida&quot;)) {</span>
+<span class="fc" id="L49">            return &quot;Ida&quot;;</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        } else if (partido.getFecha().contains(&quot;Vuelta&quot;)) {</span>
+<span class="nc" id="L51">            return &quot;Vuelta&quot;;</span>
+        } else {
+<span class="nc" id="L53">            return &quot;Ninguna palabra clave encontrada&quot;;</span>
+        }
+    }
+
+    public int tarjetasCantidad(){
+<span class="fc" id="L58">        return equipos.size();</span>
+    }
+
+    
+    public void agregar(TarjetaBase tarjeta) {
+<span class="fc" id="L63">        equipos.add(tarjeta);</span>
+<span class="fc" id="L64">    }</span>
+
+    
+    public List&lt;TarjetaBase&gt; getTarjetas(){
+<span class="fc" id="L68">        return equipos;</span>
+    }
+    
+    public Estadio getEstadio() {
+<span class="fc" id="L72">        return estadio;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

@@ -1,1 +1,10 @@
-TestPartido.class
+TestAgregarEquipos.class
+TestSacartarjetaRoja.class
+TestAgregarPartidos.class
+TesteTarjetaAmarillaYRoja.class
+TesteVar.class
+CantidadDeTarjetasPorEquipo.class
+TestImprimirElPanel.class
+TestPantallasLed.class
+TestEstadio.class
+TorneoAgregarJugadores.class

@@ -27,6 +27,7 @@ public class Torneo {
             partidos.add((Partido) objeto);
         }
     }
+    
      public int partidosCantidad(){
         return partidos.size();
     }

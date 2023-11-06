@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Torneo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Parcial</a> &gt; <a href="index.source.html" class="el_package">com.ucp</a> &gt; <span class="el_source">Torneo.java</span></div><h1>Torneo.java</h1><pre class="source lang-java linenums">package com.ucp;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Torneo {
+    String nombre;
+<span class="pc" id="L8">    List&lt;Equipo&gt; equipos = new ArrayList&lt;&gt;();</span>
+<span class="pc" id="L9">    List&lt;Partido&gt; partidos = new ArrayList&lt;&gt;();</span>
+    String ganador;
+
+<span class="nc" id="L12">    public Torneo(String nombre, List&lt;Equipo&gt; equipos) {</span>
+<span class="nc" id="L13">        this.nombre = nombre;</span>
+<span class="nc" id="L14">        this.equipos.addAll(equipos);</span>
+<span class="nc" id="L15">    } </span>
+
+<span class="fc" id="L17">    public Torneo(String nombre) {</span>
+<span class="fc" id="L18">        List&lt;Equipo&gt; equipos = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L19">        List&lt;Partido&gt; partidos = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L20">        this.nombre = nombre;</span>
+<span class="fc" id="L21">    } </span>
+
+    public void agregar(Object objeto) {
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (objeto instanceof Equipo) {</span>
+<span class="fc" id="L25">            equipos.add((Equipo) objeto);</span>
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        } else if (objeto instanceof Partido) {</span>
+<span class="fc" id="L27">            partidos.add((Partido) objeto);</span>
+        }
+<span class="fc" id="L29">    }</span>
+    
+     public int partidosCantidad(){
+<span class="fc" id="L32">        return partidos.size();</span>
+    }
+
+    public int equiposCantidad(){
+<span class="fc" id="L36">        return equipos.size();</span>
+    }
+
+    public List&lt;Partido&gt; getPartidos() {
+        
+<span class="nc" id="L41">        return partidos;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
